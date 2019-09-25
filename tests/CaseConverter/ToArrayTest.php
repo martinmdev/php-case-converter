@@ -2,9 +2,7 @@
 
 namespace Martinm\Test\CaseConverter;
 
-use Martinm\CaseConverter\Converter;
 use Martinm\CaseConverter\StringWrapper;
-use Martinm\Test\DataProvider\Provider1;
 use Martinm\Test\DataProvider\Provider2;
 use PHPUnit\Framework\TestCase;
 

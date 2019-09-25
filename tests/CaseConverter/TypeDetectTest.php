@@ -2,17 +2,13 @@
 
 namespace Martinm\Test\CaseConverter;
 
-use Martinm\CaseConverter\Converter;
 use Martinm\CaseConverter\StringWrapper;
-use Martinm\Test\DataProvider\Provider0;
-use Martinm\Test\DataProvider\Provider1;
 use PHPUnit\Framework\TestCase;
 
 class TypeDetectTest extends TestCase
 {
     public function test1()
     {
-
         $types = [
             ['Camel case', 'Camel', 'myNameIsBond'],
             ['Pascal case', 'Pascal', 'MyNameIsBond'],

@@ -22,19 +22,9 @@ class StringConverter
             $p = (new MbString($p))->toLower();
             $p = (new MbString($p))->toUcFirstNonNumber();
         }
-        // vd($parts);
-        // dd();
-        // $delimiter = $this->s->getDelimiter();
-        // if ($this->s->getType() === Type::NONE) {
-        //     $delimiter = ' ';
-        // }
         $delimiter = '_';
 
         $str = implode($delimiter, $parts);
-        // $str = (new MbString($str))->toLower();
-        // $str = (new MbString($str))->toLcFirst();
-        // vd($str);
-        // dd();
 
         return $str;
     }
@@ -47,19 +37,10 @@ class StringConverter
             $p = (new MbString($p))->toLower();
             $p = (new MbString($p))->toUcFirstNonNumber();
         }
-        // vd($parts);
-        // dd();
-        // $delimiter = $this->s->getDelimiter();
-        // if ($this->s->getType() === Type::NONE) {
-        //     $delimiter = ' ';
-        // }
         $delimiter = '';
 
         $str = implode($delimiter, $parts);
-        // $str = (new MbString($str))->toLower();
         $str = (new MbString($str))->toLcFirst();
-        // vd($str);
-        // dd();
 
         return $str;
     }
@@ -68,23 +49,10 @@ class StringConverter
     {
         $parts = $this->s->getParts();
 
-        // foreach ($parts as &$p) {
-        //     $p = (new MbString($p))->toLower();
-        //     $p = (new MbString($p))->toUcFirstNonNumber();
-        // }
-        // vd($parts);
-        // dd();
-        // $delimiter = $this->s->getDelimiter();
-        // if ($this->s->getType() === Type::NONE) {
-        //     $delimiter = ' ';
-        // }
         $delimiter = '-';
 
         $str = implode($delimiter, $parts);
         $str = (new MbString($str))->toUpper();
-        // $str = (new MbString($str))->toUcFirstNonNumber();
-        // vd($str);
-        // dd();
 
         return $str;
     }
@@ -92,24 +60,10 @@ class StringConverter
     public function toDot()
     {
         $parts = $this->s->getParts();
-
-        // foreach ($parts as &$p) {
-        //     $p = (new MbString($p))->toLower();
-        //     $p = (new MbString($p))->toUcFirstNonNumber();
-        // }
-        // vd($parts);
-        // dd();
-        // $delimiter = $this->s->getDelimiter();
-        // if ($this->s->getType() === Type::NONE) {
-        //     $delimiter = ' ';
-        // }
         $delimiter = '.';
 
         $str = implode($delimiter, $parts);
         $str = (new MbString($str))->toLower();
-        // $str = (new MbString($str))->toUcFirstNonNumber();
-        // vd($str);
-        // dd();
 
         return $str;
     }
@@ -118,44 +72,22 @@ class StringConverter
     {
         $parts = $this->s->getParts();
 
-        // foreach ($parts as &$p) {
-        //     $p = (new MbString($p))->toLower();
-        //     $p = (new MbString($p))->toUcFirstNonNumber();
-        // }
-        // vd($parts);
-        // dd();
-        // $delimiter = $this->s->getDelimiter();
-        // if ($this->s->getType() === Type::NONE) {
-        //     $delimiter = ' ';
-        // }
         $delimiter = '-';
 
         $str = implode($delimiter, $parts);
         $str = (new MbString($str))->toLower();
-        // $str = (new MbString($str))->toUcFirstNonNumber();
-        // vd($str);
-        // dd();
 
         return $str;
     }
 
     public function toLower()
     {
-        // vd($this->s->getStr());
         $parts = $this->s->getParts();
-        // vd($parts);
-        // dd();
-        // $delimiter = $this->s->getDelimiter();
-        // if ($this->s->getType() === Type::NONE) {
-        //     $delimiter = ' ';
-        // }
         $delimiter = ' ';
 
         $str = implode($delimiter, $parts);
         $mb = new MbString($str);
         $str = $mb->toLower();
-        // vd($str);
-        // dd();
 
         return $str;
     }
@@ -163,23 +95,10 @@ class StringConverter
     public function toMacro()
     {
         $parts = $this->s->getParts();
-        // foreach ($parts as &$p) {
-        //     $p = (new MbString($p))->toLower();
-        //     $p = (new MbString($p))->toUcFirstNonNumber();
-        // }
-        // vd($parts);
-        // dd();
-        // $delimiter = $this->s->getDelimiter();
-        // if ($this->s->getType() === Type::NONE) {
-        //     $delimiter = ' ';
-        // }
         $delimiter = '_';
 
         $str = implode($delimiter, $parts);
         $str = (new MbString($str))->toUpper();
-        // $str = (new MbString($str))->toUcFirstNonNumber();
-        // vd($str);
-        // dd();
 
         return $str;
     }
@@ -191,19 +110,9 @@ class StringConverter
             $p = (new MbString($p))->toLower();
             $p = (new MbString($p))->toUcFirstNonNumber();
         }
-        // vd($parts);
-        // dd();
-        // $delimiter = $this->s->getDelimiter();
-        // if ($this->s->getType() === Type::NONE) {
-        //     $delimiter = ' ';
-        // }
         $delimiter = '';
 
         $str = implode($delimiter, $parts);
-        // $str = (new MbString($str))->toLower();
-        // $str = (new MbString($str))->toUcFirstNonNumber();
-        // vd($str);
-        // dd();
 
         return $str;
     }
@@ -211,128 +120,71 @@ class StringConverter
     public function toSentence()
     {
         $parts = $this->s->getParts();
-        // foreach ($parts as &$p) {
-        //     $p = (new MbString($p))->toLower();
-        //     // $p = (new MbString($p))->toUcFirstNonNumber();
-        // }
-        // vd($parts);
-        // dd();
-        // $delimiter = $this->s->getDelimiter();
-        // if ($this->s->getType() === Type::NONE) {
-        //     $delimiter = ' ';
-        // }
         $delimiter = ' ';
 
         $str = implode($delimiter, $parts);
         $str = (new MbString($str))->toLower();
         $str = (new MbString($str))->toUcFirstNonNumber();
-        // vd($str);
-        // dd();
 
         return $str;
     }
 
     public function toSnake()
     {
-// vd($this->s->getStr());
         $parts = $this->s->getParts();
         foreach ($parts as &$p) {
             $p = (new MbString($p))->toLower();
-            // $p = (new MbString($p))->toUcFirstNonNumber();
         }
-        // vd($parts);
-        // dd();
-        // $delimiter = $this->s->getDelimiter();
-        // if ($this->s->getType() === Type::NONE) {
-        //     $delimiter = ' ';
-        // }
         $delimiter = '_';
 
         $str = implode($delimiter, $parts);
-        // $mb = new MbString($str);
-        // $str = $mb->toLower();
-        // vd($str);
-        // dd();
 
         return $str;
     }
 
     public function toTitle()
     {
-// vd($this->s->getStr());
         $parts = $this->s->getParts();
         foreach ($parts as &$p) {
             $p = (new MbString($p))->toLower();
             $p = (new MbString($p))->toUcFirstNonNumber();
         }
-        // vd($parts);
-        // dd();
-        // $delimiter = $this->s->getDelimiter();
-        // if ($this->s->getType() === Type::NONE) {
-        //     $delimiter = ' ';
-        // }
         $delimiter = ' ';
 
         $str = implode($delimiter, $parts);
-        // $mb = new MbString($str);
-        // $str = $mb->toLower();
-        // vd($str);
-        // dd();
 
         return $str;
     }
 
     public function toTrain()
     {
-        // vd($this->s->getStr());
         $parts = $this->s->getParts();
         foreach ($parts as &$p) {
             $p = (new MbString($p))->toLower();
             $p = (new MbString($p))->toUcFirstNonNumber();
             $pMb = new MbString($p);
             if ($pMb->containsNumber()) {
-                // dc($p);
                 $pos = $pMb->getFirstNonNumberPos();
                 if ($pos !== false) {
                     $p = $pMb->toUcNth($pos);
                 }
             }
         }
-        // vd($parts);
-        // dd();
-        // $delimiter = $this->s->getDelimiter();
-        // if ($this->s->getType() === Type::NONE) {
-        //     $delimiter = ' ';
-        // }
         $delimiter = '-';
 
         $str = implode($delimiter, $parts);
-        // $mb = new MbString($str);
-        // $str = $mb->toLower();
-        // vd($str);
-        // dd();
 
         return $str;
     }
 
     public function toUpper()
     {
-        // vd($this->s->getType());
-        // vd($this->s->getStr());
         $parts = $this->s->getParts();
-        // vd($parts);
-        // dd();
-        $delimiter = $this->s->getDelimiter();
-        if ($this->s->getType() === Type::NONE) {
-            $delimiter = ' ';
-        }
         $delimiter = ' ';
 
         $str = implode($delimiter, $parts);
         $mb = new MbString($str);
         $str = $mb->toUpper();
-        // vd($str);
-        // dd();
 
         return $str;
     }

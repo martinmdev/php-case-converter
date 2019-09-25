@@ -4,9 +4,6 @@ namespace Martinm\Test\CaseConverter;
 
 use Martinm\CaseConverter\Converter;
 use Martinm\CaseConverter\StringWrapper;
-use Martinm\Test\DataProvider\Provider0;
-use Martinm\Test\DataProvider\Provider1;
-use Martinm\Test\DataProvider\Provider2;
 use Martinm\Test\DataProvider\Provider3;
 use PHPUnit\Framework\TestCase;
 
@@ -18,9 +15,6 @@ class UsingNumbersInInputTest extends TestCase
     public function test1($method, $in, $ex)
     {
         $s = new StringWrapper($in);
-
-        // vd($s->getParts());
-        // dd(876);
 
         $res = $this->method($method, $in);
 
@@ -95,6 +89,5 @@ class UsingNumbersInInputTest extends TestCase
     public function provide()
     {
         return Provider3::create()->provide();
-        // return Provider0::create()->provide();
     }
 }

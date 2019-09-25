@@ -12,7 +12,6 @@ class StringWrapper extends MbString
 
     public function __construct($str)
     {
-        // dc($str);
         parent::__construct($str);
 
         $this->detectType();
@@ -50,7 +49,6 @@ class StringWrapper extends MbString
     {
         if ($this->contains(' ')) {
             $this->delimiter = ' ';
-            // dc();
             $this->parts = explode(' ', $this->str);
 
             $this->checkForUpperAndLower();
@@ -74,7 +72,6 @@ class StringWrapper extends MbString
         if ($this->contains('-')) {
             $this->delimiter = '-';
 
-            // dc();
             $this->parts = explode('-', $this->str);
 
             $strUpper = $this->toUpper();
@@ -108,14 +105,10 @@ class StringWrapper extends MbString
         if ($this->contains('_')) {
             $this->delimiter = '_';
 
-            // dc();
             $this->parts = explode('_', $this->str);
 
             $strUpper = $this->toUpper();
             $strLower = $this->toLower();
-            $strUcFirst = $this->toUcFirst();
-
-            // vd($strLower);
 
             if ($this->str === $strLower) {
                 $this->type = Type::SNAKE;
@@ -159,7 +152,6 @@ class StringWrapper extends MbString
     private function checkForPascalAndCamelCase()
     {
         $chrArray = $this->toCharacterArray();
-        // dc($chrArray);
         $parts = [];
         $part = [];
         $this->type = Type::PASCAL;
@@ -174,11 +166,9 @@ class StringWrapper extends MbString
                 $current = 'u';
 
                 if (!empty($part)) {
-                    // $parts[] = $part;
                     $parts[] = implode($part);
                 } elseif ($k > 0) {
                     $this->type = Type::NONE;
-                    // break;
                 }
                 $part = [];
             } else {
@@ -197,9 +187,7 @@ class StringWrapper extends MbString
             $part[] = $ch;
         }
 
-        // $parts[] = $part;
         $parts[] = implode($part);
-        // dc($parts);
 
         $this->parts = $parts;
     }
@@ -232,28 +220,19 @@ class StringWrapper extends MbString
                 $this->parts = [$this->str];
             } else {
                 if ($this->hasEmptyParts()) {
-                    // dc();
-                    // vd($this->parts);
                     $this->splitPartsAfterNumber();
-                    // dd(56);
                 }
-                // vd($this->str);
-                // dd();
             }
         }
     }
 
     private function splitPartsAfterNumber()
     {
-        // vd($this->parts);
         $newParts = [];
         foreach ($this->parts as $k => $part) {
             $mbP = new MbString($part);
             if ($mbP->containsNumber()) {
                 $subParts = $mbP->splitAfterNumbers();
-                // vd($part);
-                // dc($subParts);
-                // dd();
                 foreach ($subParts as $subPart) {
                     $newParts[] = $subPart;
                 }
@@ -269,26 +248,7 @@ class StringWrapper extends MbString
     {
         $this->type = Type::NONE;
 
-        // if ($this->containsNumber()) {
-        //     if ($this->type === Type::NONE) {
-        //         if ($this->isUppercase()) {
-        //             $this->parts = $this->chArrToChNumParts($this->toCharacterArray());
-        //
-        //             return;
-        //         } elseif ($this->isLowercase()) {
-        //             $this->parts = [$this->str];
-        //
-        //             return;
-        //         } else {
-        //             // vd($this->str);
-        //             // dd();
-        //         }
-        //     }
-        // }
-
-        // if ($this->checkForSpace()) {
         if ($this->checkForDash()) {
-            // } elseif ($this->checkForDash()) {
         } elseif ($this->checkForSpace()) {
         } elseif ($this->checkForUnderScore()) {
         } elseif ($this->checkForDot()) {

@@ -32,7 +32,7 @@ class Provider1
         $data = [];
         $lastMethod = null;
         $c = 0;
-        $maxc = 4;
+
         foreach ($lines as $l) {
             $case = explode('|', $l);
             $method = trim($case[1]);
@@ -43,10 +43,6 @@ class Provider1
             } else {
                 $c++;
             }
-
-            // if ($c > $maxc) {
-            //     continue;
-            // }
 
             if (!in_array($method, $allowed)) {
                 continue;

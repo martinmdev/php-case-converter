@@ -4,27 +4,16 @@ namespace Martinm\Test\CaseConverter;
 
 use Martinm\CaseConverter\Converter;
 use Martinm\CaseConverter\StringWrapper;
-use Martinm\Test\DataProvider\Provider0;
 use Martinm\Test\DataProvider\Provider1;
 use PHPUnit\Framework\TestCase;
 
 class ConverterTest extends TestCase
 {
     /**
-     * @dataProvider provide1
+     * @dataProvider provide
      */
     public function test1($method, $in, $ex)
     {
-        // $e = mb_internal_encoding();
-        //
-        // $ein = mb_detect_encoding($in);
-        // $eex = mb_detect_encoding($ex);
-
-        // dc($e);
-        // dc($ein);
-        // dc($eex);
-        // dd();
-
         $s = new StringWrapper($in);
 
         $converter = new Converter();
@@ -87,17 +76,11 @@ class ConverterTest extends TestCase
         $message .= '; in: ' . $in;
         $message .= '; type: ' . $s->getType();
 
-        if ($ex !== $res) {
-            // strToOrd($in);
-        }
-
         $this->assertEquals($ex, $res, $message);
-        // $this->assertEquals(1, 1, $message);
     }
 
-    public function provide1()
+    public function provide()
     {
         return Provider1::create()->provide();
-        // return Provider0::create()->provide();
     }
 }

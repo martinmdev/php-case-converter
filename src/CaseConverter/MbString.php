@@ -139,9 +139,6 @@ class MbString
 
     public function splitAfterNumbers()
     {
-        // return preg_split('/[0-9]+/u', $this->str, -1, PREG_SPLIT_NO_EMPTY);
-        // return preg_split('/[0-9]+/u', $this->str, -1);
-        // return preg_split('/([0-9]+)/u', $this->str, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
         return preg_split('/([^0-9]*[0-9]+)/u', $this->str, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
     }
 
@@ -155,14 +152,5 @@ class MbString
         }
 
         return false;
-        // dc($this->str);
-        // $res = preg_split('/[^0-9]/', $this->str, 1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_OFFSET_CAPTURE);
-        // dc($res);
-        //
-        // if (!empty($res) && isset($res[0][1])) {
-        //     return $res[0][1];
-        // }
-        //
-        // return false;
     }
 }
